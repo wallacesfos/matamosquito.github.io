@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mata Mosquito</title>
+    <link rel="sortcut icon" href="./imagens/mosca.png" type="image/x-icon" />;
+    <link rel="stylesheet" href="./style.css">
+    <script src="./jogo.js"></script>
+</head>
+<body onresize="ajustaTamanho()">
+
+    <div class="painel">
+        <div class="vidas">
+            <img id="v1" src="./imagens/coracao_cheio.png" alt="coracao_vazio">
+            <img id="v2" src="./imagens/coracao_cheio.png" alt="coracao_vazio">
+            <img id="v3" src="./imagens/coracao_cheio.png" alt="coracao_vazio">
+
+        </div>
+        <div class="cronometro">
+            tempo restante: <span id="cronometro"></span>
+        </div>
+    </div>
+
+    <input type="number" value="30" id="tempao" style="visibility:hidden;">
+    
+    <script>
+        
+        var niveljogo = window.location.search;
+        var tempinho;
+
+        if(niveljogo == '?normal'){
+            tempinho = 2000 ;
+        }else if(niveljogo == '?dificil'){
+            tempinho = 1000;
+        }else if(niveljogo == '?chuck'){
+            tempinho = 750;
+        }
+        document.getElementById('tempao').value = tempinho
+
+
+
+        document.getElementById('cronometro').innerHTML = tempo
+       
+        var n1 = document.getElementById('tempao').value
+
+        console.log(n1)
+       var criamosca = setInterval(() => {
+            posicaoRandomica();
+       }, tempinho);
+    </script>
+</body>
+</html>
