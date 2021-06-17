@@ -54,6 +54,7 @@ function posicaoRandomica(){
     mosquitinho.style.top = posicaoY + 'px'
     mosquitinho.style.position = 'absolute'
     mosquitinho.id = 'mosquito'
+    mosquitinho.setAttribute("draggable", "false")
     mosquitinho.onclick = function(){
         document.getElementById('mosquito').remove();
     }
